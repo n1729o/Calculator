@@ -1,0 +1,167 @@
+:root {
+  --background: #cd96d5;
+  --font: #222222;
+  --border: #4b0f2b;
+  --screen: #eee;
+  --calculator: #f09fc8;
+  --btn: #f4c8f5;
+  --btn-hover: #edb5e2;
+  --btn-active: #ccc;
+  --btn-red: rgb(241, 122, 168);
+  --btn-red-hover: rgb(223, 98, 156);
+  --btn-red-active: rgb(237, 144, 205);
+  --btn-blue: rgb(218, 84, 227);
+  --btn-blue-hover: rgb(219, 138, 241);
+  --btn-blue-active: rgb(183, 97, 233);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-image: url('background1.jpg');
+  background-size: cover;       /* makes it fill the screen */
+  background-repeat: no-repeat; /* prevents it from repeating */
+  background-position: center;  /* centers the image */
+  background-color: var(--background);
+  color: var(--font);
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+button {
+
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* MAIN */
+
+.main {
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  min-height: 500px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.calculator {
+  width: 400px;
+  border: 12px var(--border) solid;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: var(--calculator);
+}
+
+.screen {
+  border: 3px solid #000;
+  border-radius: 0; /* no round corners */
+  box-shadow: none;
+  image-rendering: pixelated;
+  padding: 10px 20px;
+  border: 8px var(--border) solid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background-color: var(--screen);
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.screen-last {
+  min-height: 32px;
+  font-size: 20px;
+}
+
+.screen-current {
+  min-height: 64px;
+  font-size: 40px;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.btn {
+  padding: 16px;                            /* smaller padding for blocky look */
+  border: 3px solid #000;                   /* thicker, solid black border */
+  border-radius: 0;                         /* remove curves = pixel vibe */
+  background-color: var(--btn);             /* your color variables */
+  font-family: 'Press Start 2P', cursive;   /* pixel font */
+  font-size: 14px;                          /* slightly smaller = 8-bit style */
+  text-align: center;
+  image-rendering: pixelated;               /* pixel rendering */
+  box-shadow: none;                         /* remove modern shadows */
+  cursor: pointer;
+  color: black;
+}
+
+
+.btn:hover {
+  background-color: var(--btn-hover);
+  transform: scale(1.05); /* optional lil pop */
+}
+
+.btn:active {
+  background-color: var(--btn-active);
+  transform: scale(0.95); /* optional press feel */
+}
+
+
+.btn-red {
+  background-color: var(--btn-red);
+}
+
+.btn-red:hover {
+  background-color: var(--btn-red-hover);
+}
+
+.btn-red:active {
+  background-color: var(--btn-red-active);
+}
+
+.btn-blue {
+  background-color: var(--btn-blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--btn-blue-hover);
+}
+
+.btn-blue:active {
+  background-color: var(--btn-blue-active);
+}
+
+/* Disables input spinners in calc screen */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
